@@ -1,8 +1,11 @@
 def calcular_puntaje(stats):
-    puntos = 3 * stats['innovacion'] + 1 * stats['presentacion']
- if stats['errores_graves']:
-    puntos = puntos - 1
+    innovacion = 3
+    presentacion = 1
+    puntos = innovacion * stats['innovacion'] + presentacion * stats['presentacion']
+    if stats['errores_graves']:
+     puntos = puntos - 1
     return puntos
+
 def mejor_equipo_de_ronda(ronda):
     puntajes = {} #diccionario vacio
     for equipo, stats in ronda.items():
